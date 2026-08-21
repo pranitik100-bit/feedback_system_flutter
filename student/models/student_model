@@ -1,0 +1,51 @@
+class StudentModel {
+  final String id;
+  final String enrollmentNumber;
+  final String name;
+  final String course;
+  final String semester;
+  final String division;
+  final String phone;
+  final String email;
+
+  StudentModel({
+    required this.id,
+    required this.enrollmentNumber,
+    required this.name,
+    required this.course,
+    required this.semester,
+    required this.division,
+    required this.phone,
+    required this.email,
+  });
+
+  // Convert Firestore document → StudentModel
+  factory StudentModel.fromMap(
+      Map<String, dynamic> map,
+      String documentId,
+      ) {
+    return StudentModel(
+      id: documentId,
+      enrollmentNumber: map['enrollmentNumber'] ?? '',
+      name: map['name'] ?? '',
+      course: map['course'] ?? '',
+      semester: map['semester'] ?? '',
+      division: map['division'] ?? '',
+      phone: map['phone'] ?? '',
+      email: map['email'] ?? '',
+    );
+  }
+
+  // Convert StudentModel → Firestore document
+  Map<String, dynamic> toMap() {
+    return {
+      'enrollmentNumber': enrollmentNumber,
+      'name': name,
+      'course': course,
+      'semester': semester,
+      'division': division,
+      'phone': phone,
+      'email': email,
+    };
+  }
+}
