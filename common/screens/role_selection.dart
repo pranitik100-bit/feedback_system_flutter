@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Role());
-}
-
 class Role extends StatelessWidget {
   const Role({super.key});
 
