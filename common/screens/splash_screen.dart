@@ -3,10 +3,6 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import "package:google_fonts/google_fonts.dart";
 import 'role_selection.dart';
 
-void main() {
-  runApp(Splash());
-}
-
 class Splash extends StatelessWidget {
   const Splash({super.key});
 
